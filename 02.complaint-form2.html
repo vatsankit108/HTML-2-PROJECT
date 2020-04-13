@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Complaint form</title>
+	<link rel="stylesheet"  href="style1.css">
+	<script>function validate()
+			{
+				if(document.getElementById('t1').value=="-1")
+			{
+				alert("please provide the type of complaint!");
+				document.getElementById('t1').focus();
+					return false;
+			}
+			if(document.getElementById("t2").value=="")
+			{
+				alert("please provide your address!");
+				document.getElementById('t2').focus();
+					return false;
+			}
+			if(document.getElementById("t3").value=="")
+			{
+				alert("please provide your complete info!");
+				document.getElementById('t1').focus();
+					return false;
+			}
+			if(document.getElementById("t4").value=="")
+			{
+				alert("please provide the brief!");
+				document.getElementById('t4').focus();
+					return false;
+			}
+			}
+			function myfunction()
+	{
+		var x=document.getElementById('t2');
+		x.value=x.value.toUpperCase();
+	}
+	function myfunction1()
+	{
+		alert("dont write there");
+	}
+	function myfunction2(x)
+	{
+		x.style.background="pink";	
+	}
+		</script>
+</head>
+<body >
+	<div class="container">
+		<h2>Please fill the details</h2>
+		<form action="">
+			<select name="Complaint" id="t1" placeholder="Complaint type">
+					<option value="-1" selected>Complaint Type</option>
+					<option value="1">Public</option>
+					<option value="2">Private</option>
+					<option value="3">Administrative</option>
+					
+				</select><br><br>
+			
+			<input type="text" id="t2" placeholder="Address" onblur="myfunction()" onfocus="myfunction2(this)"><br><br>
+			<input type="text" id="t3" placeholder="Duration(in days)" onfocus="myfunction2(this)"><br><br>
+			<input type="text" id="t4" placeholder="Brief " onfocus="myfunction2(this)"><br><br>
+			
+			<form action="/action_page.php">
+  <label for="file">Upload file:</label>
+  <input type="file" id="file" name="file" accept="file/*"><br><br><br><br>
+   <button  onclick="validate()">submit</button><br><br>
+   <input type="text" id="t5" placeholder="Offical Remarks" onkeydown="myfunction1()">
+  
+	</div>
+</body>
+</html>
